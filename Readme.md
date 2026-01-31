@@ -68,15 +68,9 @@ Se utilizan funciones nativas de PHP para optimizar el análisis.
 
 ---
 
-# 🚀 Cómo ejecutar los ejercicios
+# 🚀 Ejecución en XAMPP
 
-1. Clona el repositorio:
-git clone https://github.com/tu-usuario/tu-repo.git (github.com in Bing)
-
-2. Ejecuta cada archivo desde la terminal:
-php 001.php php 002.php php 003.php
-
-O colócalos en un servidor local como XAMPP, WAMP o Laragon.
+Se han colocado en un servidor local como XAMPP y funcionan correctamente.
 
 ---
 
@@ -92,4 +86,4 @@ O colócalos en un servidor local como XAMPP, WAMP o Laragon.
 
 # 👩‍💻 Autor
 
-Proyecto desarrollado por **Ana de la Higuera**.
+Proyecto desarrollado por **Ana de la Higuera** y código revisado con ayuda de la IA para que funcione correctamente. 
