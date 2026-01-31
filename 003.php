@@ -1,13 +1,13 @@
 <?php
 /**
- * EJERCICIO 3: Analizador de texto003.php
+ * EJERCICIO 3: Analizador de texto
  * ---------------------------------------------------------
  * 1. Convertir el texto a minúsculas
  * 2. Contar cuántas palabras tiene
  * 3. Contar cuántas veces aparece cada palabra
  * 4. Mostrar solo palabras repetidas
  * 5. Mostrar la palabra más repetida
- * 6. Ignorar palabras de menos de 3 letras
+ * 6. Ignorar palabras de menos de 3 letras (último paso)
  * ---------------------------------------------------------
  */
 
@@ -15,18 +15,25 @@ $texto = "PHP no está muerto… solo sigue trabajando silenciosamente en el 80%
 
 
 // ================================================================
-// Convertir el texto a minúsculas
+// 🔹 Convertir el texto a minúsculas
 // ================================================================
 $texto = strtolower($texto);
 
 
 // ================================================================
-// Separar el texto en palabras y contar cuantas palabras tiene
+// Separar el texto en palabras y contarlas
 // ================================================================
 $palabras = explode(" ", $texto);
 
-// Mostrar cuántas palabras tiene el texto original
 echo "<strong>Total de palabras:</strong> " . count($palabras) . "<br><br>";
+
+
+// ================================================================
+// Ignorar palabras de menos de 3 letras
+// ================================================================
+$palabrasFiltradas = array_filter($palabras, function($p) {
+    return strlen($p) >= 3;
+});
 
 
 // ================================================================
@@ -61,13 +68,5 @@ foreach ($conteo as $palabra => $cantidad) {
 
 echo "<hr>";
 echo "<strong>La palabra más repetida es:</strong> $maxPalabra ($maxRepeticiones veces)<br>";
-
-// ================================================================
-//  Ignorar palabras de menos de 3 letras
-// ================================================================
-$palabrasFiltradas = array_filter($palabras, function($p) {
-    return strlen($p) >= 3;
-});
-
 
 ?>
