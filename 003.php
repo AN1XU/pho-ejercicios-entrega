@@ -92,3 +92,4 @@ foreach ($conteo as $palabra => $cantidad) {
 echo "$maxPalabra ($maxRepeticiones veces)<br>";
 
 ?>
+
