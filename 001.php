@@ -2,11 +2,10 @@
 /**
  * EJERCICIO 1: Gestor de notas de estudiantes
  * ---------------------------------------------------------
- * Este archivo contiene:
- *  - Punto 1: Mostrar nombre, promedio y estado
- *  - Punto 2: Contar cuántos aprobaron
- *  - Punto 3: Contar cuántos suspendieron
- *  - Punto 4: Mostrar el estudiante con mejor promedio
+ * 1. Mostrar nombre, promedio y estado
+ * 2. Contar cuántos aprobaron
+ * 3. Contar cuántos suspendieron
+ * 4. Mostrar el estudiante con mejor promedio
  * ---------------------------------------------------------
  */
 
@@ -18,65 +17,45 @@ $estudiantes = [
     "Carlos" => [6, 6, 6]
 ];
 
-/**
- * Función para calcular el promedio de un array de notas.
- */
+// Función para calcular el promedio
 function calcularPromedio($notas) {
     return array_sum($notas) / count($notas);
 }
-
-
-// ======================================================================
-// Mostrar el nombre del estudiante, su promedio y si está aprobado/suspenso (bucle que recorre todo los estudiantes)
-// ======================================================================
 
 $aprobados = 0;
 $suspensos = 0;
 $mejorEstudiante = "";
 $mejorPromedio = -1;
 
+// 1. Mostrar nombre, promedio y estado
 foreach ($estudiantes as $nombre => $notas) {
 
     $promedio = calcularPromedio($notas);
 
-    echo "<strong>Estudiante:</strong> $nombre<br>";
-    echo "Promedio: $promedio<br>";
+    echo "Estudiante: $nombre\n";
+    echo "Promedio: $promedio\n";
 
     if ($promedio >= 6) {
-        echo "Estado: Aprobado<br><br>";
+        echo "Estado: Aprobado\n\n";
         $aprobados++;
     } else {
-        echo "Estado: Suspenso<br><br>";
+        echo "Estado: Suspenso\n\n";
         $suspensos++;
     }
 
-    // Comprobación del mejor promedio
+    // Comprobar mejor promedio
     if ($promedio > $mejorPromedio) {
         $mejorPromedio = $promedio;
         $mejorEstudiante = $nombre;
     }
 }
 
+// 2. Total aprobados
+echo "Total aprobados: $aprobados\n";
 
-// ======================================================================
-// Mostrar cuántos aprobaron
-// ======================================================================
+// 3. Total suspensos
+echo "Total suspensos: $suspensos\n";
 
-echo "<hr>";
-echo "<strong>Total aprobados:</strong> $aprobados<br>";
-
-
-// ======================================================================
-// Mostrar cuántos suspendieron
-// ======================================================================
-
-echo "<strong>Total suspensos:</strong> $suspensos<br>";
-
-
-// ======================================================================
-// Mostrar el estudiante con el promedio más alto
-// ======================================================================
-
-echo "<strong>Mejor estudiante:</strong> $mejorEstudiante con promedio $mejorPromedio<br>";
-
+// 4. Mejor estudiante
+echo "Mejor estudiante: $mejorEstudiante con promedio $mejorPromedio\n";
 ?>
